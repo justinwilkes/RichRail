@@ -27,17 +27,31 @@ public class CommandController {
 	public String getItems(String command, int index) {
 		//return "";
 		
+		
+		// [WORD] [WORD] [PARAMETER]
 		if(index == 0 || index == 1 || index == 4 || index == 5 || index == 6 || index == 7) {
 			Pattern r = Pattern.compile("(.*)\\s(.*)\\s(.*)");
 		    Matcher m = r.matcher(command);
 		    if (m.matches()) {			    
 		    	return (m.group(3));		
 		    }
-		} else {
-			Pattern r = Pattern.compile("(.*)\\s(.*)\\s(.*)");
+		    
+		    
+		// [WORD] [WORD] [PARAMETER] [WORD] [PARAMETER]
+		} else if(index == 2) {		
+			Pattern r = Pattern.compile("(.*)\\s(.*)\\s(.*)\\s(.*)\\s(.*)");
 		    Matcher m = r.matcher(command);
 		    if (m.matches()) {			    
-		    	return (m.group(3));		
+		    	return (m.group(3) + "|||" + m.group(5));		
+		    }
+		    
+		    
+		// [WORD] [PARAMETER] [WORD] PARAMETER] 
+		} else if(index == 3 || index == 8) {
+			Pattern r = Pattern.compile("(.*)\\s(.*)\\s(.*)\\s(.*)");
+		    Matcher m = r.matcher(command);
+		    if (m.matches()) {			    
+		    	return (m.group(2) + "|||" + m.group(4));		
 		    }
 		}
 		
