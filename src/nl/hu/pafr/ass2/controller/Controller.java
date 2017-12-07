@@ -12,10 +12,7 @@ public class Controller {
 	public Controller(RailRoad railroad) {
 		this.railroad = railroad;
 	}
-	
-	
-	
-	
+
 	/**
 	 * Wagons
 	 */
@@ -32,7 +29,7 @@ public class Controller {
 	
 	
 	public boolean wagonExists(Train t) {
-		for(Train train : trains) {
+		for(Train train : railroad.getTrains()) {
 			if(train.getName().equals(t.getName())) return true;
 			else return false;
 		}
@@ -51,8 +48,8 @@ public class Controller {
 	public String createTrain(String name) {
 		Train newTrain = new Train(name);
 		if(!trainExists(newTrain)) {
-			selectedTrain = newTrain;
-			trains.add(newTrain);
+			railroad.setSelectedTrain(newTrain);
+			railroad.addTrain(newTrain);
 			return "Train " + name + " created";
 		} else return "Train " + name + " already exists";		
 	}
@@ -63,23 +60,9 @@ public class Controller {
 	
 	
 	public boolean trainExists(Train t) {
-		for(Train train : trains) {
+		for(Train train : railroad.getTrains()) {
 			if(train.getName().equals(t.getName())) return true;
 		}
 		return false;
 	}
-	
-	
-	
-	
-	
-	
-	
-	// Getters
-	public Train getSelectedTrain() {				return this.selectedTrain;		}
-	public ArrayList<Train> getTrains() {			return this.trains;				}
-	
-	
-	// Setters
-	public void setSelectedTrain(Train train) {		this.selectedTrain = train;		}
 }
