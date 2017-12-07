@@ -25,7 +25,7 @@ public class Train {
 	public boolean hasName() {				return (this.name != "");	}
 	
 	
-	public int getNumseats() {
+	public int getNumSeats() {
 		int numseatsTotal = 0;
 		for(Wagon w : wagons) {
 			numseatsTotal += w.getnumSeats();
