@@ -2,12 +2,14 @@ package nl.hu.pafr.ass2.model;
 
 import java.util.ArrayList;
 
+
 public class Train {
 	
 	// Attributes
 	private String name;
 	private ArrayList<Wagon> wagons = new ArrayList<Wagon>();
-		
+			
+	
 	// Constructor
 	public Train(String name) {				this.name = name;			}
 	
