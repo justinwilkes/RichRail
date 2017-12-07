@@ -2,10 +2,12 @@ package nl.hu.pafr.ass2.controller;
 
 import java.util.ArrayList;
 import nl.hu.pafr.ass2.model.Train;
+import nl.hu.pafr.ass2.model.Wagon;
 
 public class Controller {
 	
 	private ArrayList<Train> trains = new ArrayList<Train>();
+	private ArrayList<Wagon> wagons = new ArrayList<Wagon>();
 	private Train selectedTrain = null;
 	
 	public Controller() {}
@@ -16,15 +18,13 @@ public class Controller {
 	
 	
 	
-	public Train newTrain(String name) {
+	public String newTrain(String name) {
 		Train newTrain = new Train(name);
 		if(!trainExists(newTrain)) {
 			selectedTrain = newTrain;
 			trains.add(newTrain);
-			return newTrain;
-		} else {
-			return null;
-		}
+			return "Train " + name + " created";
+		} else return "Train " + name + " already exists";		
 	}
 	
 	

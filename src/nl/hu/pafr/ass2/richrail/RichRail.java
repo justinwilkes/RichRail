@@ -2,12 +2,15 @@ package nl.hu.pafr.ass2.richrail;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -20,6 +23,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import javax.swing.border.BevelBorder;
 
+import nl.hu.pafr.ass2.controller.CommandController;
 import nl.hu.pafr.ass2.controller.Controller;
 import nl.hu.pafr.ass2.model.Train;
 import nl.hu.pafr.ass2.model.Wagon;
@@ -38,7 +42,8 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	private Controller controller = new Controller();
 	private ArrayList<Train> allTrains = new ArrayList<Train>();
 	
-	
+	 private JScrollPane vertical;
+	    private JTextArea console;
 	
 	private double[] weights = new double[] { 0.1, 0.1, 0.1, 0.1 };
 	private int[]    heights = new int[]    { 7,   7,   7,   7   }; 
@@ -59,6 +64,9 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 		super();
 		initGUI();
 	}
+	
+
+	
 	
 	// Create the GUI
 	private void initGUI() {
@@ -139,7 +147,6 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 			
 			
 			
-		
 			
 			// Right Output
 			rightOutput = new JTextArea();				
@@ -169,55 +176,35 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void executeCommand() {
 		String command = CommandField.getText();
-		rightOutput.append("<< " + command + "\n");
-		
-		
-		
-		if(command.toLowerCase().contains("new train")) {
-			
-			String[] arr = command.split("new train");		
-			if(controller.newTrain(arr[1].trim()) == null) responseOutput("Train " + arr[1].trim() + " already exists");
-			else responseOutput("train " + arr[1].trim() + " created");
-			
-		} else if(command.toLowerCase().contains("new wagon")) {
-			
-			String[] arr = command.split("new wagon");
-			if(controller.getSelectedTrain() != null) {
-				controller.getSelectedTrain().addWagon(new Wagon(arr[1].trim()));
-				responseOutput("wagon " + arr[1].trim() + " created with 20 seats");	
-			}
-			else responseOutput("No selected train");
 				
-			
-		} else if(command.toLowerCase().contains("new wagon") && command.toLowerCase().contains("numseats")) {
-			
-		} else if(command.toLowerCase().contains("add") && command.toLowerCase().contains("to")) {
-			
-		} else if(command.toLowerCase().contains("getnumseats train")) {
-			
-		} else if(command.toLowerCase().contains("getnumseats wagon")) {
-			
-		} else if(command.toLowerCase().contains("delete train")) {
-			// Check if train exists
-		} else if(command.toLowerCase().contains("remove") && command.toLowerCase().contains("from")) {
-			
-		} else {
-			responseOutput("Command not recognized");
-		}
+		
+		int functionIndex = new CommandController().getIndexFunction(command);
+		
+		System.out.println(new CommandController().getItems(command, functionIndex));
+
 		
 		
-		//
-//		new train tr1; // response is “train tr1 created”
-//		new wagon wg1; // response is “wagon wg1 created with 20 seats”
-//		new wagon wg2 numseats 15; // response is “wagon wg2 created with 15 seats”
-//		add wg1 to tr1; // response: “wagon wg1 added to train tr1”
-//		getnumseats train tr1; // response: “number of seats in train tr1: 20”
-//		getnumseats wagon wg2; // response: “number of seats in wagon wg2: 15”
-//		delete train tr1; // response: “train tr1 deleted”
-//		delete train tr2; // response: “train tr2 does not exist”
-//		remove wg1 from tr1; // response: “wagon wg1 removed from train tr1”
+	
+	
+//0		new train tr1; 				// response is “train tr1 created”
+//1		new wagon wg1; 				// response is “wagon wg1 created with 20 seats”
+//		new wagon wg2 numseats 15; 	// response is “wagon wg2 created with 15 seats”
+//		add wg1 to tr1; 			// response: “wagon wg1 added to train tr1”
+//4		getnumseats train tr1; 		// response: “number of seats in train tr1: 20”
+//5		getnumseats wagon wg2; 		// response: “number of seats in wagon wg2: 15”
+//6		delete train tr1; 			// response: “train tr1 deleted”
+//7		delete train tr2; 			// response: “train tr2 does not exist”
+//		remove wg1 from tr1; 		// response: “wagon wg1 removed from train tr1”
 		
 		
 		
@@ -230,6 +217,8 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 		
 		
 	}
+	
+	
 	
 	
 	

@@ -21,4 +21,13 @@ public class Train {
 	public String getName() {				return this.name;			}
 	public ArrayList<Wagon> getWagons() {	return this.wagons; 		}	
 	public boolean hasName() {				return (this.name != "");	}
+	
+	
+	public int getNumseats() {
+		int numseatsTotal = 0;
+		for(Wagon w : wagons) {
+			numseatsTotal += w.getSeats();
+		}
+		return numseatsTotal;		
+	}
 }
