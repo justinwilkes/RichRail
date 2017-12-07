@@ -20,12 +20,26 @@ public class Railroad {
 		trains.add(train);
 	}
 	
+	public void removeTrain(String name) {
+		for(int i = 0; i < trains.size(); i++) {
+			Train train = trains.get(i);
+			if(train.getName().equals(name)) trains.remove(i);			
+		}	
+	}
+	
 	public ArrayList<Wagon> getWagons() {
 		return wagons;
 	}
 	
 	public void addWagon(Wagon wagon) {
 		wagons.add(wagon);
+	}
+	
+	public void deleteWagon(String name) {
+		for(int i = 0; i < wagons.size(); i++) {
+			Wagon wagon = wagons.get(i);
+			if(wagon.getName().equals(name)) wagons.remove(i);			
+		}
 	}
 	
 	public Train getSelectedTrain() {

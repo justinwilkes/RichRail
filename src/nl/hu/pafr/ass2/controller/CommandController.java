@@ -50,7 +50,7 @@ public class CommandController {
 			
 			case 6:
 				// delete train
-			return "";
+			return contr.deleteTrain(parameters.get(0));
 			
 			case 7:
 				// Delete Wagon
