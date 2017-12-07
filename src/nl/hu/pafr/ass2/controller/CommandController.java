@@ -7,12 +7,14 @@ import java.util.regex.Pattern;
 import nl.hu.pafr.ass2.model.Railroad;
 
 public class CommandController {
+
 	private Railroad railroad;
 	
 	Controller contr = new Controller(railroad);
 	
 	public CommandController(Railroad railroad) {
 		this.railroad = railroad;
+
 	}
 	
 	

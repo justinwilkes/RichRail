@@ -9,7 +9,7 @@ import nl.hu.pafr.ass2.model.Wagon;
 public class Controller {
 	private Railroad railroad;
 	
-	public Controller(Railroad railroad) {
+	public Controller(RailRoad railroad) {
 		this.railroad = railroad;
 	}
 
