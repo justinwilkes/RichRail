@@ -8,12 +8,12 @@ import nl.hu.pafr.ass2.model.Railroad;
 
 public class CommandController {
 
-	private Railroad railroad;
-	
-	Controller contr = new Controller(railroad);
+	private Railroad railroad;	
+	Controller contr;
 	
 	public CommandController(Railroad railroad) {
 		this.railroad = railroad;
+		contr = new Controller(railroad)
 
 	}
 	
