@@ -13,7 +13,7 @@ public class CommandController {
 	
 	public CommandController(Railroad railroad) {
 		this.railroad = railroad;
-		contr = new Controller(railroad)
+		contr = new Controller(railroad);
 
 	}
 	
