@@ -73,8 +73,6 @@ public class Controller {
 		return false;
 	}
 	
-	
-	
 	/**
 	 * @param name : String
 	 * @return String for the response output
