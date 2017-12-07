@@ -194,7 +194,8 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 //4		getnumseats train tr1; 		// response: “number of seats in train tr1: 20”
 //5		getnumseats wagon wg2; 		// response: “number of seats in wagon wg2: 15”
 //6	 	delete train tr1; 			// response: “train tr1 deleted”
-//7		delete train tr2; 			// response: “train tr2 does not exist”
+//		delete train tr2; 			// response: “train tr2 does not exist”
+//7		delete wagon wg1; 			// response: “wagon wg1 deleted”
 //	  8	remove wg1 from tr1; 		// response: “wagon wg1 removed from train tr1”
 		
 		
@@ -216,6 +217,7 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	public void responseOutput(String response) {
 		rightOutput.append(">> " + response + "\n");
 	}
+	
 	
 	
 	
