@@ -42,11 +42,11 @@ public class CommandController {
 			
 			case 4:
 				// get numseats train
-			return "";
+			return contr.trainNumSeats(parameters.get(0));
 			
 			case 5:
 				// get numseats wagon
-			return "";
+			return contr.wagonNumSeats(parameters.get(0));
 			
 			case 6:
 				// delete train

@@ -114,7 +114,7 @@ public class Controller {
 				return Integer.toString(wagon.getSeats());
 			}
 		}
-		return "Wagon" + name + "does not exist";
+		return "Wagon " + name + " does not exist";
 	}
 	
 	public String trainNumSeats(String name) {
@@ -123,7 +123,7 @@ public class Controller {
 				return Integer.toString(train.getNumSeats());
 			}
 		}
-		return "Train" + name + "does not exist";
+		return "Train " + name + " does not exist";
 	}
 	
 	/**	
