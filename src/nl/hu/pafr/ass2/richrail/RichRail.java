@@ -39,7 +39,6 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	private JTextField CommandField;
 	private JTextArea rightOutput;
 	private JTextArea leftOutput;
-	private Controller controller = new Controller();
 	private CommandController cmdController = new CommandController();
 	
 	
@@ -168,18 +167,17 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		if (event.getSource() == ExecuteButton) {
-			executeCommand();			
+			String command = CommandField.getText();
+			String response = cmdController.executeCommand(command);	
+			responseOutput(response);
 		}
 	}
 	
 	
 	
-	public void executeCommand() {
-		String command = CommandField.getText();
-				
+	
 		
-		int functionIndex = cmdController.getIndexFunction(command);		
-		String parameters = cmdController.getItems(command, functionIndex);
+		
 
 		
 		
@@ -205,7 +203,6 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 		
 		
 		
-	}
 	
 	
 	

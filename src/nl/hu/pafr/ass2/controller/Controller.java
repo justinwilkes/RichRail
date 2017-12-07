@@ -15,10 +15,39 @@ public class Controller {
 	
 	
 	
+	/**
+	 * Wagons
+	 */
+	
+	public String createWagon(String name) {
+		return "";
+	}
 	
 	
 	
-	public String newTrain(String name) {
+	public String deleteWagon(String name) {
+		return "";
+	}
+	
+	
+	public boolean wagonExists(Train t) {
+		for(Train train : trains) {
+			if(train.getName().equals(t.getName())) return true;
+			else return false;
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+	/**
+	 * Trains
+	 */	
+	
+	
+	public String createTrain(String name) {
 		Train newTrain = new Train(name);
 		if(!trainExists(newTrain)) {
 			selectedTrain = newTrain;
@@ -27,14 +56,22 @@ public class Controller {
 		} else return "Train " + name + " already exists";		
 	}
 	
+	public String deleteTrain(String name) {
+		return ""; 
+	}
+	
 	
 	public boolean trainExists(Train t) {
 		for(Train train : trains) {
 			if(train.getName().equals(t.getName())) return true;
-			else return false;
 		}
 		return false;
 	}
+	
+	
+	
+	
+	
 	
 	
 	// Getters
