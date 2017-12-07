@@ -5,7 +5,6 @@
  */
 
 
-
 package nl.hu.pafr.ass2.controller;
 
 import nl.hu.pafr.ass2.model.Railroad;
@@ -19,7 +18,7 @@ public class Controller {
 	/**
 	 * @param railroad : Railroad
 	 * 
-	 * Constructor
+	 * @Description Constructor
 	 */
 	public Controller(Railroad railroad) {
 		this.railroad = railroad;
@@ -31,7 +30,7 @@ public class Controller {
 	 * @param name : String
 	 * @return String for the response output
 	 * 
-	 * Creates a new wagon and adds the new wagon to 
+	 * @Description Creates a new wagon and adds the new wagon to 
 	 * an arrayList in the class railroad
 	 */
 	public String createWagon(String name) {
@@ -48,7 +47,7 @@ public class Controller {
 	 * @param name : String
 	 * @return String for the response output
 	 * 
-	 * Deletes the wagon with the given
+	 * @Description Deletes the wagon with the given
 	 * name, if exists
 	 */
 	public String deleteWagon(String name) {
@@ -64,7 +63,7 @@ public class Controller {
 	 * @param w : Wagon w
 	 * @return boolean if wagon exists
 	 * 
-	 * Checks if the given wagon exists in the 
+	 * @Description Checks if the given wagon exists in the 
 	 * array from the class railroad
 	 */
 	public boolean wagonExists(Wagon w) {
@@ -80,7 +79,7 @@ public class Controller {
 	 * @param name : String
 	 * @return String for the response output
 	 * 
-	 * Creates a new train and adds the new train to 
+	 * @Description Creates a new train and adds the new train to 
 	 * an arrayList in the class railroad
 	 */
 	public String createTrain(String name) {
@@ -98,7 +97,7 @@ public class Controller {
 	 * @param name : String
 	 * @return String for the response output
 	 * 
-	 * Deletes the train with the given
+	 * @Description Deletes the train with the given
 	 * name, if exists
 	 */
 	public String deleteTrain(String name) {		
@@ -114,7 +113,7 @@ public class Controller {
 	 * @param t : Train
 	 * @return boolean if train exists
 	 * 
-	 * Checks if the given train exists in the 
+	 * @Description Checks if the given train exists in the 
 	 * array from the class railroad
 	 */
 	public boolean trainExists(Train t) {
