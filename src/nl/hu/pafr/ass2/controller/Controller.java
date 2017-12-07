@@ -111,7 +111,7 @@ public class Controller {
 	public String wagonNumSeats(String name) {
 		for (Wagon wagon : railroad.getWagons()) {
 			if (wagon.getName().equals(name)) {
-				return Integer.toString(wagon.getSeats());
+				return Integer.toString(wagon.getNumSeats());
 			}
 		}
 		return "Wagon " + name + " does not exist";

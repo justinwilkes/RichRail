@@ -6,40 +6,46 @@ import java.util.regex.Pattern;
 
 import nl.hu.pafr.ass2.model.Railroad;
 
-public class CommandController {
-
-	private Railroad railroad;	
-	Controller contr;
+public class CommandController {	
+	private Controller contr;
 	
-	public CommandController(Railroad railroad) {
-		this.railroad = railroad;
+	
+	
+	/**
+	 * @param railroad : Railroad
+	 * 
+	 * @Description Constructor
+	 */
+	public CommandController(Railroad railroad) {		
 		contr = new Controller(railroad);
-
 	}
 	
 	
+	
+	/**
+	 * @param command : String 
+	 * @return String for the response output
+	 * 
+	 * @Description Splits the command by running multiple 
+	 * methods and execute the command by their index
+	 */
 	public String executeCommand(String command) {
 		int functionIndex = getIndexFunction(command);		
 		ArrayList<String> parameters = getParameters(command, functionIndex);
 		
 		switch (functionIndex) {
-			case 0:
-				// New Train				
-			return contr.createTrain(parameters.get(0));
+			case 0:				// New Train				
+				return contr.createTrain(parameters.get(0));			
 			
+			case 1:				// New Wagon
+				return contr.createWagon(parameters.get(0));
 			
-			case 1:
-				// New Wagon
-			return contr.createWagon(parameters.get(0));
+			case 2:				// New Wagon with numseats
+				return "";
 			
-			case 2:
-				// New Wagon with numseats
-			return "";
-			
-			case 3:
-				// Add Wagon to Train
-			return "";
-			
+			case 3:				// Add Wagon to Train
+				return "";
+
 			case 4:
 				// get numseats train
 			return contr.trainNumSeats(parameters.get(0));
@@ -48,32 +54,27 @@ public class CommandController {
 				// get numseats wagon
 			return contr.wagonNumSeats(parameters.get(0));
 			
-			case 6:
-				// delete train
-			return contr.deleteTrain(parameters.get(0));
+			case 6:				// delete train
+				return contr.deleteTrain(parameters.get(0));
 			
-			case 7:
-				// Delete Wagon
-				
-			return "";
+			case 7:				// Delete Wagon				
+				return "";
 			
-			case 8:
-				// remove wagon from train				
-				
-			return  "";
-			
-			case -1:
-				
-			return "No valid command";
-			
-		
-		}
-		
-		return "";
+			case 8:				// remove wagon from train
+				return  "";			
+		}		
+		return "No valid command";
 	}
 	
 	
 	
+	/**
+	 * @param command : String
+	 * @return int for the needed function to run
+	 * 
+	 * @Description Returns index when the command 
+	 * matches the regex 
+	 */
 	// Returns the index for the matching regex
 	public int getIndexFunction(String command) {	
 		if(command.matches("(new)\\s(train)\\s[\\w]+")) 						return 0;		// New Train

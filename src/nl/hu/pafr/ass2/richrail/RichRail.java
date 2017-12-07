@@ -2,21 +2,16 @@ package nl.hu.pafr.ass2.richrail;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -24,12 +19,10 @@ import javax.swing.WindowConstants;
 import javax.swing.border.BevelBorder;
 
 import nl.hu.pafr.ass2.controller.CommandController;
-import nl.hu.pafr.ass2.controller.Controller;
 import nl.hu.pafr.ass2.model.Railroad;
-import nl.hu.pafr.ass2.model.Train;
-import nl.hu.pafr.ass2.model.Wagon;
 
 
+@SuppressWarnings("serial")
 public class RichRail extends javax.swing.JFrame implements ActionListener {
 	
 	private JButton ExecuteButton;	

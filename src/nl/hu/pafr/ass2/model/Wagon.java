@@ -21,5 +21,5 @@ public class Wagon {
 
 	// Getters	
 	public String getName() {		return this.name;		}	
-	public int getSeats() {			return this.numseats;	}
+	public int getNumSeats() {		return this.numseats;	}
 }
