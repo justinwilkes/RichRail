@@ -5,9 +5,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CommandController {
-	Controller contr = new Controller();
+	Controller contr;
 	
-	public CommandController() { }
+	public CommandController(RailRoad r) {
+		this.contr = new Controller(r);
+	}
 	
 	
 	public String executeCommand(String command) {

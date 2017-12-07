@@ -1,16 +1,17 @@
 package nl.hu.pafr.ass2.controller;
 
 import java.util.ArrayList;
+
+import nl.hu.pafr.ass2.model.Railroad;
 import nl.hu.pafr.ass2.model.Train;
 import nl.hu.pafr.ass2.model.Wagon;
 
 public class Controller {
+	private Railroad railroad;
 	
-	private ArrayList<Train> trains = new ArrayList<Train>();
-	private ArrayList<Wagon> wagons = new ArrayList<Wagon>();
-	private Train selectedTrain = null;
-	
-	public Controller() {}
+	public Controller(RailRoad railroad) {
+		this.railroad = railroad;
+	}
 	
 	
 	
