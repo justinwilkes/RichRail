@@ -176,21 +176,12 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	public void executeCommand() {
 		String command = CommandField.getText();
 				
 		
-		int functionIndex = new CommandController().getIndexFunction(command);
-		
-		System.out.println(new CommandController().getItems(command, functionIndex));
+		int functionIndex = new CommandController().getIndexFunction(command);		
+		String parameters = new CommandController().getItems(command, functionIndex);
 
 		
 		
@@ -198,13 +189,13 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	
 //0		new train tr1; 				// response is “train tr1 created”
 //1		new wagon wg1; 				// response is “wagon wg1 created with 20 seats”
-//		new wagon wg2 numseats 15; 	// response is “wagon wg2 created with 15 seats”
-//		add wg1 to tr1; 			// response: “wagon wg1 added to train tr1”
+//	2	new wagon wg2 numseats 15; 	// response is “wagon wg2 created with 15 seats”
+//	  3	add wg1 to tr1; 			// response: “wagon wg1 added to train tr1”
 //4		getnumseats train tr1; 		// response: “number of seats in train tr1: 20”
 //5		getnumseats wagon wg2; 		// response: “number of seats in wagon wg2: 15”
-//6		delete train tr1; 			// response: “train tr1 deleted”
+//6	 	delete train tr1; 			// response: “train tr1 deleted”
 //7		delete train tr2; 			// response: “train tr2 does not exist”
-//		remove wg1 from tr1; 		// response: “wagon wg1 removed from train tr1”
+//	  8	remove wg1 from tr1; 		// response: “wagon wg1 removed from train tr1”
 		
 		
 		

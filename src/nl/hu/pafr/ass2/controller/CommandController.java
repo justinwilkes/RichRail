@@ -25,9 +25,7 @@ public class CommandController {
 	
 	
 	public String getItems(String command, int index) {
-		//return "";
-		
-		
+				
 		// [WORD] [WORD] [PARAMETER]
 		if(index == 0 || index == 1 || index == 4 || index == 5 || index == 6 || index == 7) {
 			Pattern r = Pattern.compile("(.*)\\s(.*)\\s(.*)");
