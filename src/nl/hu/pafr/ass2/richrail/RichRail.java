@@ -40,10 +40,8 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	private JTextArea rightOutput;
 	private JTextArea leftOutput;
 	private Controller controller = new Controller();
-	private ArrayList<Train> allTrains = new ArrayList<Train>();
+	private CommandController cmdController = new CommandController();
 	
-	 private JScrollPane vertical;
-	    private JTextArea console;
 	
 	private double[] weights = new double[] { 0.1, 0.1, 0.1, 0.1 };
 	private int[]    heights = new int[]    { 7,   7,   7,   7   }; 
@@ -180,8 +178,8 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 		String command = CommandField.getText();
 				
 		
-		int functionIndex = new CommandController().getIndexFunction(command);		
-		String parameters = new CommandController().getItems(command, functionIndex);
+		int functionIndex = cmdController.getIndexFunction(command);		
+		String parameters = cmdController.getItems(command, functionIndex);
 
 		
 		
