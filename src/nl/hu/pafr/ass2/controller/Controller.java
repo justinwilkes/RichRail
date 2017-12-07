@@ -1,20 +1,18 @@
 package nl.hu.pafr.ass2.controller;
 
 import java.util.ArrayList;
+
+import nl.hu.pafr.ass2.model.Railroad;
 import nl.hu.pafr.ass2.model.Train;
 import nl.hu.pafr.ass2.model.Wagon;
 
 public class Controller {
+	private Railroad railroad;
 	
-	private ArrayList<Train> trains = new ArrayList<Train>();
-	private ArrayList<Wagon> wagons = new ArrayList<Wagon>();
-	private Train selectedTrain = null;
-	
-	public Controller() {}
-	
-	
-	
-	
+	public Controller(Railroad railroad) {
+		this.railroad = railroad;
+	}
+
 	/**
 	 * Wagons
 	 */
@@ -31,7 +29,7 @@ public class Controller {
 	
 	
 	public boolean wagonExists(Train t) {
-		for(Train train : trains) {
+		for(Train train : railroad.getTrains()) {
 			if(train.getName().equals(t.getName())) return true;
 			else return false;
 		}
@@ -50,8 +48,8 @@ public class Controller {
 	public String createTrain(String name) {
 		Train newTrain = new Train(name);
 		if(!trainExists(newTrain)) {
-			selectedTrain = newTrain;
-			trains.add(newTrain);
+			railroad.setSelectedTrain(newTrain);
+			railroad.addTrain(newTrain);
 			return "Train " + name + " created";
 		} else return "Train " + name + " already exists";		
 	}
@@ -62,23 +60,9 @@ public class Controller {
 	
 	
 	public boolean trainExists(Train t) {
-		for(Train train : trains) {
+		for(Train train : railroad.getTrains()) {
 			if(train.getName().equals(t.getName())) return true;
 		}
 		return false;
 	}
-	
-	
-	
-	
-	
-	
-	
-	// Getters
-	public Train getSelectedTrain() {				return this.selectedTrain;		}
-	public ArrayList<Train> getTrains() {			return this.trains;				}
-	
-	
-	// Setters
-	public void setSelectedTrain(Train train) {		this.selectedTrain = train;		}
 }

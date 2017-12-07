@@ -25,6 +25,7 @@ import javax.swing.border.BevelBorder;
 
 import nl.hu.pafr.ass2.controller.CommandController;
 import nl.hu.pafr.ass2.controller.Controller;
+import nl.hu.pafr.ass2.model.Railroad;
 import nl.hu.pafr.ass2.model.Train;
 import nl.hu.pafr.ass2.model.Wagon;
 
@@ -39,7 +40,8 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	private JTextField CommandField;
 	private JTextArea rightOutput;
 	private JTextArea leftOutput;
-	private CommandController cmdController = new CommandController();
+	private CommandController cmdController;
+	private Railroad railroad;
 	
 	
 	private double[] weights = new double[] { 0.1, 0.1, 0.1, 0.1 };
@@ -59,6 +61,8 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	
 	public RichRail() {
 		super();
+		this.railroad = new Railroad();
+		this.cmdController = new CommandController(railroad);
 		initGUI();
 	}
 	

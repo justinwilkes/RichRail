@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import nl.hu.pafr.ass2.model.Railroad;
+
 public class CommandController {
-	Controller contr = new Controller();
+	private Railroad railroad;
 	
-	public CommandController() { }
+	Controller contr = new Controller(railroad);
+	
+	public CommandController(Railroad railroad) {
+		this.railroad = railroad;
+	}
 	
 	
 	public String executeCommand(String command) {
