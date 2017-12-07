@@ -208,7 +208,7 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 		}
 		
 		
-		
+		//
 //		new train tr1; // response is “train tr1 created”
 //		new wagon wg1; // response is “wagon wg1 created with 20 seats”
 //		new wagon wg2 numseats 15; // response is “wagon wg2 created with 15 seats”
