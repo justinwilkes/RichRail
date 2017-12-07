@@ -47,16 +47,16 @@ public class CommandController {
 				return "";
 			
 			case 4:				// get numseats train
-				return "";
+				return contr.trainNumSeats(parameters.get(0));
 			
 			case 5:				// get numseats wagon
-				return "";
+				return contr.wagonNumSeats(parameters.get(0));
 			
 			case 6:				// delete train
 				return contr.deleteTrain(parameters.get(0));
 			
 			case 7:				// Delete Wagon				
-				return "";
+				return contr.deleteWagon(parameters.get(0));
 			
 			case 8:				// remove wagon from train
 				return  "";			

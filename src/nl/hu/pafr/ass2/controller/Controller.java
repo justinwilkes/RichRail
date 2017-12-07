@@ -76,6 +76,19 @@ public class Controller {
 		return false;
 	}
 	
+	
+	public String wagonNumSeats(String name) {
+		for (Wagon wagon : railroad.getWagons()) {
+			if (wagon.getName().equals(name)) {
+				return Integer.toString(wagon.getnumSeats());
+			}
+		}
+		return "Wagon" + name + "does not exist";
+	}
+	
+	
+	
+	
 	/**
 	 * @param name : String
 	 * @return String for the response output
@@ -108,19 +121,12 @@ public class Controller {
 		} else return "Train " + name + " does not exist";		
 	}
 	
-	public String wagonNumSeats(String name) {
-		for (Wagon wagon : railroad.getWagons()) {
-			if (wagon.getName().equals(name)) {
-				return Integer.toString(wagon.getSeats());
-			}
-		}
-		return "Wagon" + name + "does not exist";
-	}
+	
 	
 	public String trainNumSeats(String name) {
 		for (Train train : railroad.getTrains()) {
 			if (train.getName().equals(name)) {
-				return Integer.toString(train.getNumSeats());
+				return Integer.toString(train.getNumseats());
 			}
 		}
 		return "Train" + name + "does not exist";
