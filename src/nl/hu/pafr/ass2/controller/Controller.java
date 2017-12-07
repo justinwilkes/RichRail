@@ -2,6 +2,9 @@
  * TODO
  * - Add method remove [WAGON] from [TRAIN]
  * - Add Method add [WAGON] to [TRAIN]
+ * - Add Method getnumseats train [TRAIN]
+ * - Add Method getnumseats wagon [WAGON]
+ * - Add Method new wagon [WAGON] numseats [NUMSEATS]
  */
 
 

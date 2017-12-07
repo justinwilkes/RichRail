@@ -17,6 +17,8 @@ public class Train {
 	public void addWagon(Wagon wagon) {		this.wagons.add(wagon);		}
 	public void clearWagons() {				wagons.clear(); 	 		}	
 	
+	
+	
 	// Getters
 	public String getName() {				return this.name;			}
 	public ArrayList<Wagon> getWagons() {	return this.wagons; 		}	
@@ -26,7 +28,7 @@ public class Train {
 	public int getNumseats() {
 		int numseatsTotal = 0;
 		for(Wagon w : wagons) {
-			numseatsTotal += w.getSeats();
+			numseatsTotal += w.getnumSeats();
 		}
 		return numseatsTotal;		
 	}
