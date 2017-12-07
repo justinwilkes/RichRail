@@ -2,6 +2,9 @@
  * TODO
  * - Add method remove [WAGON] from [TRAIN]
  * - Add Method add [WAGON] to [TRAIN]
+ * - Add Method getnumseats train [TRAIN]
+ * - Add Method getnumseats wagon [WAGON]
+ * - Add Method new wagon [WAGON] numseats [NUMSEATS]
  */
 
 
@@ -102,10 +105,26 @@ public class Controller {
 		if(trainExists(new Train(name))) {
 			railroad.removeTrain(name);
 			return "Train " + name + " deleted";
-		} else return "Train " + name + " does not exists";		
+		} else return "Train " + name + " does not exist";		
 	}
 	
+	public String wagonNumSeats(String name) {
+		for (Wagon wagon : railroad.getWagons()) {
+			if (wagon.getName().equals(name)) {
+				return Integer.toString(wagon.getSeats());
+			}
+		}
+		return "Wagon" + name + "does not exist";
+	}
 	
+	public String trainNumSeats(String name) {
+		for (Train train : railroad.getTrains()) {
+			if (train.getName().equals(name)) {
+				return Integer.toString(train.getNumSeats());
+			}
+		}
+		return "Train" + name + "does not exist";
+	}
 	
 	/**	
 	 * @param t : Train
