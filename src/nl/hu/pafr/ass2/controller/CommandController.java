@@ -33,6 +33,7 @@ public class CommandController {
 		int functionIndex = getIndexFunction(command);		
 		ArrayList<String> parameters = getParameters(command, functionIndex);
 		
+		
 		switch (functionIndex) {
 			case 0:				// New Train				
 				return contr.createTrain(parameters.get(0));			
@@ -41,7 +42,7 @@ public class CommandController {
 				return contr.createWagon(parameters.get(0));
 			
 			case 2:				// New Wagon with numseats
-				return "";
+				return contr.createWagon(parameters.get(0), Integer.parseInt(parameters.get(1)));
 			
 			case 3:				// Add Wagon to Train
 				return "";
@@ -61,6 +62,7 @@ public class CommandController {
 			case 8:				// remove wagon from train
 				return  "";			
 		}		
+		
 		return "No valid command";
 	}
 	
@@ -73,7 +75,6 @@ public class CommandController {
 	 * @Description Returns index when the command 
 	 * matches the regex 
 	 */
-	// Returns the index for the matching regex
 	public int getIndexFunction(String command) {	
 		if(command.matches("(new)\\s(train)\\s[\\w]+")) 						return 0;		// New Train
 		if(command.matches("(new)\\s(wagon)\\s[\\w]+")) 						return 1;		// New Wagon
@@ -121,10 +122,8 @@ public class CommandController {
 		    	parameters.add(m.group(2));
 		    	parameters.add(m.group(4));			
 		    }
-		}
+		}		
 		
-		
-		return parameters;
-		
+		return parameters;		
 	}
 }

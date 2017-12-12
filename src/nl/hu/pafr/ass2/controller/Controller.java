@@ -47,6 +47,24 @@ public class Controller {
 	
 	
 	/**
+	 * @param name : String, numseats : int
+	 * @return String for the response output
+	 * 
+	 * @Description Creates a new wagon with numseats
+	 * and adds the new wagon to an arrayList in the 
+	 * class railroad
+	 */
+	public String createWagon(String name, int numseats) {
+		Wagon newWagon = new Wagon(name, numseats);
+		if(!wagonExists(newWagon)) {
+			railroad.addWagon(newWagon);
+			return "Wagon " + name + " created with " + numseats + " seats";
+		} else return "Wagon " + name + " already exists";		
+	}
+	
+	
+	
+	/**
 	 * @param name : String
 	 * @return String for the response output
 	 * 
@@ -77,15 +95,22 @@ public class Controller {
 	}
 	
 	
+	
+	/**
+	 * @param name : String
+	 * @return String for the response output
+	 * 
+	 * @Description Returns the number of seats 
+	 * from the wagon with the given name
+	 */
 	public String wagonNumSeats(String name) {
 		for (Wagon wagon : railroad.getWagons()) {
 			if (wagon.getName().equals(name)) {
 				return Integer.toString(wagon.getnumSeats());
 			}
 		}
-		return "Wagon" + name + "does not exist";
+		return "Wagon " + name + " does not exist";
 	}
-	
 	
 	
 	
@@ -123,14 +148,23 @@ public class Controller {
 	
 	
 	
+	/**
+	 * @param name : String
+	 * @return String for the response output
+	 * 
+	 * @Description Returns the number of seats 
+	 * from the train with the given name
+	 */
 	public String trainNumSeats(String name) {
 		for (Train train : railroad.getTrains()) {
 			if (train.getName().equals(name)) {
-				return Integer.toString(train.getNumseats());
+				return Integer.toString(train.getNumSeats());
 			}
 		}
-		return "Train" + name + "does not exist";
+		return "Train " + name + " does not exist";
 	}
+	
+	
 	
 	/**	
 	 * @param t : Train

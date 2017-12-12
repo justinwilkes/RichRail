@@ -141,7 +141,6 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 			
 			
 			
-			
 			// Right Output
 			rightOutput = new JTextArea();				
 			rightOutput.setLineWrap(true);
@@ -165,6 +164,7 @@ public class RichRail extends javax.swing.JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		if (event.getSource() == ExecuteButton) {
 			String command = CommandField.getText();
+			leftOutput.append("<< " + command + "\n");
 			String response = cmdController.executeCommand(command);	
 			responseOutput(response);
 		}
