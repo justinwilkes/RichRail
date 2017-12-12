@@ -38,7 +38,7 @@ public class CommandController {
 			case 0:				// New Train				
 				return contr.createTrain(parameters.get(0));			
 			
-			case 1:				// New Wagon
+			case 1:				// New Wagon/
 				return contr.createWagon(parameters.get(0));
 			
 			case 2:				// New Wagon with numseats
@@ -46,7 +46,7 @@ public class CommandController {
 			
 			case 3:				// Add Wagon to Train
 				return "";
-			
+
 			case 4:				// get numseats train
 				return contr.trainNumSeats(parameters.get(0));
 			
